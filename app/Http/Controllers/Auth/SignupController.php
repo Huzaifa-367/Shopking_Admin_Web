@@ -70,6 +70,7 @@ class SignupController extends Controller
     ): JsonResponse {
         try {
             $this->otpManagerService->verifyPhone($request);
+            
             return new JsonResponse([
                 'status' => true,
                 'message' => trans('all.message.otp_verify_success')
