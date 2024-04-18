@@ -645,7 +645,7 @@ class ProductService
     /**
      * @throws Exception
      */
-    public function relatedProductsmain(Product $product, PaginateRequest $request)
+    public function relatedProducts(Product $product, PaginateRequest $request)
     {
         try {
             $productTags = $product->tags;
@@ -687,57 +687,6 @@ class ProductService
         }
     }
 
-
-public function relatedProducts(Product $product, PaginateRequest $request)
-{
-    try {
-        $productTags = $product->tags;
-        $method      = $request->get('paginate', 0) == 1 ? 'paginate' : 'get';
-        $methodValue = $request->get('paginate', 0) == 1 ? $request->get('per_page', 32) : '*';
-        $orderColumn = $request->get('order_column') ?? 'id';
-        $orderType   = $request->get('order_type') ?? 'desc';
-        $rand        = $request->get('rand', 0) > 0 ? $request->get('rand') : 0;
-
-        $relatedProductsQuery = Product::select('products.id', 'products.name', 'products.sku', 'products.slug', 'products.selling_price', 'products.variation_price', 'products.add_to_flash_sale', 'products.offer_start_date', 'products.offer_end_date', 'products.discount', 'products.status')
-            ->withReviewRating()
-            ->with(['wishlist' => fn ($query) => $query->where('user_id', Auth::check() ? Auth::user()->id : 0)])
-            ->with('media', 'variations', 'reviews', 'tags')
-            ->active('products.status')
-            ->whereNot('id', $product->id)
-            ->limit(6)
-            ->randAndLimitOrOrderBy($rand, $orderColumn, $orderType);
-
-        if (count($productTags) > 0) {
-            $relatedProductsQuery->whereHas('tags', function ($query) use ($productTags) {
-                $query->where(function ($subQuery) use ($productTags) {
-                    foreach ($productTags as $productTag) {
-                        $subQuery->orWhere('name', 'like', '%' . $productTag->name . '%');
-                    }
-                });
-            });
-        }
-
-        $relatedProducts = $relatedProductsQuery->$method($methodValue);
-
-        if ($relatedProducts->isEmpty()) {
-            // Return latest products
-            return Product::select('products.id', 'products.name', 'products.sku', 'products.slug', 'products.selling_price', 'products.variation_price', 'products.add_to_flash_sale', 'products.offer_start_date', 'products.offer_end_date', 'products.discount', 'products.status')
-                ->withReviewRating()
-                ->with(['wishlist' => fn ($query) => $query->where('user_id', Auth::check() ? Auth::user()->id : 0)])
-                ->with('media', 'variations', 'reviews', 'tags')
-                ->active('products.status')
-                ->whereNot('id', $product->id)
-                 ->randAndLimitOrOrderBy($rand, $orderColumn, $orderType)
-                ->limit(6)
-                ->$method($methodValue);
-        }
-
-        return $relatedProducts;
-    } catch (Exception $exception) {
-        Log::info($exception->getMessage());
-        throw new Exception($exception->getMessage(), 422);
-    }
-}
 
     /**
      * @throws Exception

@@ -32,9 +32,7 @@ class AddressRequest extends FormRequest
             'country'      => ['required', 'string', 'max:100'],
             'state'        => ['nullable', 'string', 'max:100'],
             'city'         => ['nullable', 'string', 'max:100'],
-            'zip_code'     => ['nullable', 'string', 'max:10'],
-            'floor_no'     => ['nullable', 'int', 'max:10'],
-            'house_no'     => ['nullable', 'string', 'max:10'],
+            'zip_code'     => ['nullable', 'string'],
             'address'      => ['required', 'string', 'max:500'],
         ];
     }

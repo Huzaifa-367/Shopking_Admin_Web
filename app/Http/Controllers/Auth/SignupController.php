@@ -115,11 +115,7 @@ class SignupController extends Controller
 
        if ($user) {
          $this->token = $user->createToken('auth_token')->plainTextToken;
-         return response()->json([
-             'status' => true,
-             'token' => $this->token,
-             'message' => trans('all.message.register_successfully')
-             ]);
+         return response()->json(['status' => true, 'token' => $this->token, 'message' => trans('all.message.register_successfully')]);
        } else {
             return response(['status' => false, 'message' => trans('all.message.register_not_completed')], 422);
         }
@@ -129,11 +125,11 @@ class SignupController extends Controller
     {
         try {
             $user = null;
-            // if(isset($request->phone) && !blank($request->phone)){
-            //     $user = User::where(['phone' => $request->phone, 'country_code' => $request->country_code])->first();
-            // }else{
+            if(isset($request->phone) && !blank($request->phone)){
+                $user = User::where(['phone' => $request->phone, 'country_code' => $request->country_code])->first();
+            }else{
                 $user = User::where(['email' => $request->email])->first();
-            // }
+            }
             if ($user) {
                 Auth::guard('web')->loginUsingId($user->id);
                 $this->token = $user->createToken('auth_token')->plainTextToken;

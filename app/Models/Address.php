@@ -10,7 +10,7 @@ class Address extends Model
     use HasFactory;
 
     protected $table = "addresses";
-    protected $fillable    = ['full_name', 'email', 'country_code', 'phone', 'country', 'address', 'user_id', 'state', 'city', 'zip_code', 'house_no', 'floor_no', 'latitude', 'longitude'];
+    protected $fillable    = ['full_name', 'email', 'country_code', 'phone', 'country', 'address', 'user_id', 'state', 'city', 'zip_code', 'latitude', 'longitude'];
     protected $casts = [
         'id'           => 'integer',
         'full_name'    => 'string',
@@ -23,8 +23,6 @@ class Address extends Model
         'state'        => 'string',
         'city'         => 'string',
         'zip_code'     => 'string',
-        'house_no'     => 'string',
-        'floor_no'     => 'string',
         'latitude'     => 'string',
         'longitude'    => 'string',
     ];
