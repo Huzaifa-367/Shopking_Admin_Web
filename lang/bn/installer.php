@@ -2,77 +2,68 @@
 
 
 return [
-    'title'       => 'ShopKing Installer',
-    'next'        => 'Next Step',
+    'title'       => 'ShopKing ইনস্টলার',
+    'next'        => 'পরবর্তী ধাপ',
     'welcome'     => [
-        'templateTitle' => 'Welcome',
-        'title'         => 'ShopKing Installer',
-        'message'       => 'Easy Installation and Setup Wizard.',
-        'next'          => 'Check Requirements',
+        'templateTitle' => 'স্বাগতম',
+        'title'         => 'ShopKing ইনস্টলার',
+        'message'       => 'সহজ ইনস্টলেশন এবং সেটআপ উইজার্ড।',
+        'next'          => 'পরিশীলন প্রয়োজনীয়তা',
     ],
     'requirement' => [
-        'templateTitle' => 'Step 1 | Server Requirements',
-        'title'         => 'Server Requirements',
-        'next'          => 'Check Permissions',
-        'version'       => 'version',
-        'required'      => 'required'
+        'templateTitle' => 'ধাপ 1 | সার্ভারের প্রয়োজনীয়তা',
+        'title'         => 'সার্ভার প্রয়োজনীয়তা',
+        'next'          => 'অনুমতিসমূহ পরীক্ষা করুন',
+        'version'       => 'সংস্করণ',
+        'required'      => 'প্রয়োজনীয়'
     ],
     'permission'  => [
-        'templateTitle'       => 'Step 2 | Permissions',
-        'title'               => 'Permissions',
-        'next'                => 'Site Setup',
-        'permission_checking' => 'Permission Checking'
-    ],
-    'license' => [
-        'templateTitle'       => 'Step 3 | License',
-        'title'               => 'License Setup',
-        'next'                => 'Site Setup',
-        'active_process'      => 'Active Process',
-        'label'               => [
-            'license_key' => 'License Key'
-        ]
+        'templateTitle'       => 'ধাপ 2 | অনুমতি',
+        'title'               => 'অনুমতি',
+        'next'                => 'সাইট সেটআপ',
+        'permission_checking' => 'অনুমতি পরীক্ষা'
     ],
     'site'        => [
-        'templateTitle' => 'Step 3 | Site Setup',
-        'title'         => 'Site Setup',
-        'next'          => 'Database Setup',
+        'templateTitle' => 'ধাপ 3 | সাইট সেটআপ',
+        'title'         => 'সাইট সেটআপ',
+        'next'          => 'ডাটাবেস সেটআপ',
         'label'         => [
-            'app_name' => 'App Name',
-            'app_url'  => 'App Url',
+            'app_name' => 'অ্যাপ নাম',
+            'app_url'  => 'অ্যাপ URL',
         ]
     ],
     'database'    => [
-        'templateTitle'            => 'Step 4 | Database Setup',
-        'title'                    => 'Database Setup',
-        'next'                     => 'Final Setup',
-        'fail_message'             => 'Could not connect to the database.',
-        'fail_mysql_version'       => 'Use mysql version 8.0 or later.',
-        'fail_mariadb_version'     => 'Use mysql version 10.2 or later.',
-        'fail_postgresql_version'  => 'Use mysql version 9.4 or later.',
-        'fail_sqlserver_version'   => 'Use mysql version 2008 or later.',
-        'fail_singlestore_version' => 'Use mysql version 8.1 or later.',
+        'templateTitle'            => 'ধাপ 4 | ডাটাবেস সেটআপ',
+        'title'                    => 'ডাটাবেস সেটআপ',
+        'next'                     => 'অবশ্যই সেটআপ',
+        'fail_message'             => 'ডাটাবেসে সংযোগ নেই।',
+        'fail_mysql_version'       => 'MySQL সংস্করণ 8.0 বা তার পরের ব্যবহার করুন।',
+        'fail_mariadb_version'     => 'MySQL সংস্করণ 10.2 বা তার পরের ব্যবহার করুন।',
+        'fail_postgresql_version'  => 'MySQL সংস্করণ 9.4 বা তার পরের ব্যবহার করুন।',
+        'fail_sqlserver_version'   => 'MySQL সংস্করণ 2008 বা তার পরের ব্যবহার করুন।',
+        'fail_singlestore_version' => 'MySQL সংস্করণ 8.1 বা তার পরের ব্যবহার করুন।',
         'label'                    => [
-            'database_connection' => 'Database Connection',
-            'database_host'       => 'Database Host',
-            'database_port'       => 'Database Port',
-            'database_name'       => 'Database Name',
-            'database_username'   => 'Database Username',
-            'database_password'   => 'Database Password',
+            'database_connection' => 'ডাটাবেস সংযোগ',
+            'database_host'       => 'ডাটাবেস হোস্ট',
+            'database_port'       => 'ডাটাবেস পোর্ট',
+            'database_name'       => 'ডাটাবেস নাম',
+            'database_username'   => 'ডাটাবেস ব্যবহারকারীর নাম',
+            'database_password'   => 'ডাটাবেস পাসওয়ার্ড',
         ]
     ],
     'final'       => [
-        'templateTitle'   => 'Step 6 | Final Setup',
-        'title'           => 'Final Setup',
-        'success_message' => 'Application has been successfully installed.',
-        'login_info'      => 'Login Information',
-        'email'           => 'Email',
-        'password'        => 'Password',
+        'templateTitle'   => 'ধাপ 6 | চেষ্টা সেটআপ',
+        'title'           => 'চেষ্টা সেটআপ',
+        'success_message' => 'অ্যাপ্লিকেশনটি সফলভাবে ইনস্টল হয়েছে।',
+        'login_info'      => 'লগইন তথ্য',
+        'email'           => 'ইমেল',
+        'password'        => 'পাসওয়ার্ড',
         'email_info'      => 'admin@example.com',
         'password_info'   => '123456',
-        'next'            => 'Finish',
+        'next'            => 'শেষ',
     ],
     'installed'   => [
-        'success_log_message' => 'Food King installer successfully INSTALLED on ',
-        'update_log_message'  => 'Food King Installer successfully UPDATED on ',
+        'success_log_message' => 'ShopKing ইনস্টলার সফলভাবে ইনস্টল করা হয়েছে ',
+        'update_log_message'  => 'ShopKing ইনস্টলার সফলভাবে আপডেট হয়েছে ',
     ],
 ];

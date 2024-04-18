@@ -3,10 +3,10 @@
 use App\Enums\OrderStatus;
 
 return [
-    OrderStatus::PENDING    => 'زیر التواء',
-    OrderStatus::CONFIRMED  => 'تصدیق شدہ',
-    OrderStatus::ON_THE_WAY => 'راہ میں ہے',
-    OrderStatus::DELIVERED  => 'سپرد کر دیا گیا',
-    OrderStatus::CANCELED   => 'منسوخ کر دیا گیا',
-    OrderStatus::REJECTED   => 'مسترد',
+    OrderStatus::PENDING    => 'মুলতুবি',
+    OrderStatus::CONFIRMED  => 'নিশ্চিত',
+    OrderStatus::ON_THE_WAY => 'রাস্তায়',
+    OrderStatus::DELIVERED  => 'ডেলিভার',
+    OrderStatus::CANCELED   => 'বাতিল',
+    OrderStatus::REJECTED   => 'প্রত্যাখ্যাত'
 ];

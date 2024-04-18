@@ -3,6 +3,7 @@
 use App\Enums\PaymentStatus;
 
 return [
-    PaymentStatus::PAID   => 'ادا شدہ',
-    PaymentStatus::UNPAID => 'ادا نہیں شدہ',
+    PaymentStatus::PAID   => 'পরিশোধ করা হয়েছে',
+    PaymentStatus::UNPAID => 'অপরিশোধিত',
+
 ];

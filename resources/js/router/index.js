@@ -1,5 +1,4 @@
-// import {createRouter, createWebHashHistory} from "vue-router";
-import { createRouter, createWebHistory } from 'vue-router';
+import {createRouter, createWebHashHistory} from "vue-router";
 import ENV from '../config/env';
 import appService from "../services/appService";
 import DashboardComponent from "../components/admin/dashboard/DashboardComponent";
@@ -100,13 +99,13 @@ appService.recursiveRouter(routes, permission);
 
 const API_URL = ENV.API_URL;
 const router = createRouter({
-    // linkActiveClass: "active",
-    // mode: 'history',
-    history: createWebHistory(),
+    linkActiveClass: "active",
+    mode: 'history',
+    history: createWebHashHistory(API_URL),
     routes,
-    // scrollBehavior() {
-    //     return { left: 0, top: 0}
-    // }
+    scrollBehavior() {
+        return { left: 0, top: 0}
+    }
 });
 
 router.beforeEach((to, from, next) => {

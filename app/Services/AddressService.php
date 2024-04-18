@@ -13,7 +13,7 @@ use App\Http\Requests\AddressRequest;
 class AddressService
 {
 
-    public $addressFilter = ['full_name', 'email', 'country_code', 'phone', 'country', 'city', 'state', 'zip_code', 'address'];
+    public $addressFilter = ['full_name', 'email', 'country_code', 'phone', 'country', 'city', 'state', 'zip_code', 'house_no', 'floor_no', 'address'];
 
     /**
      * @throws Exception

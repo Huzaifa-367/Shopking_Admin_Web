@@ -3,8 +3,8 @@
 use App\Enums\Source;
 
 return [
-    Source::WEB => 'Web',
-    Source::APP => 'App',
-    Source::POS => 'Pos',
+    Source::WEB => 'ওয়েব',
+    Source::APP => 'অ্যাপ',
+    Source::POS => 'পস',
 
 ];

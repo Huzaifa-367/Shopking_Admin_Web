@@ -28,6 +28,8 @@ class AddressResource extends JsonResource
             "state"        => $this->state === null ? '' : $this->state,
             "city"         => $this->city === null ? '' : $this->city,
             "zip_code"     => $this->zip_code === null ? '' : $this->zip_code,
+            "floor_no"     => $this->floor_no === null ? '' : $this->floor_no,
+            "house_no"     => $this->house_no === null ? '' : $this->house_no,
             "latitude"     => $this->latitude,
             "longitude"    => $this->longitude,
         ];

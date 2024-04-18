@@ -3,6 +3,7 @@
 use App\Enums\PromotionType;
 
 return [
-    PromotionType::SMALL   => 'چھوٹا',
-    PromotionType::BIG => 'بڑا',
+    PromotionType::SMALL => 'ছোট',
+    PromotionType::BIG   => 'বড়',
+
 ];
